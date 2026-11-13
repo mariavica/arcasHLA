@@ -172,12 +172,12 @@ def expectation_maximization(eqs, lengths, allele_idx, population, prior,
 
     theta0, undivided_counts = initial_abundances(eqs, lengths, population)
     
-    log.info('[genotype] Top 10 alleles by undivided read count:')
+    log.info('[genotype] Top alleles by undivided read count:')
     log.info('\t\t{: <20}    {: >10}\t'.format('allele', 'read count'))
     
     for idx, count in sorted(undivided_counts.items(), 
                              key=lambda x: x[1], 
-                             reverse = True)[:10]:
+                             reverse = True):
                                      
         log.info('\t\t{: <20}    {: >10.0f}\t'
                  .format(process_allele(allele_idx[idx][0], 3), count))
